@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Nandor Naszradi">
+        <meta name="description" content="TODO Application">
+        <meta name="keywords" content="todo, tasks, reminder">
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+        <title>TODO Application</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="container">
+                <h1>TODO Application</h1>
+                <ul class="todo-list">
+                    <li class="todo-list-item">
+                        <p class="todo-list-item-text">6:00 - Try to wake up on time</p>
+                        <div class="todo-list-item-buttons">
+                            <button type="button" class="delete">Delete</button>
+                            <button type="button" class="edit">Edit</button>
+                            <button type="button" class="finished">Finished</button>
+                        </div>
+                    </li>
+                    <li class="todo-list-item">
+                        <p class="todo-list-item-text">13:00 - Meeting with the client</p>
+                        <div class="todo-list-item-buttons">
+                            <button type="button" class="delete">Delete</button>
+                            <button type="button" class="edit">Edit</button>
+                            <button type="button" class="finished">Finished</button>
+                        </div>
+                    </li>
+                    <li class="todo-list-item">
+                        <p class="todo-list-item-text">18:00 - Go to the GYM</p>
+                        <div class="todo-list-item-buttons">
+                            <button type="button" class="delete">Delete</button>
+                            <button type="button" class="edit">Edit</button>
+                            <button type="button" class="finished">Finished</button>
+                        </div>
+                    </li>
+                </ul>
+                <form class="todo-add-task-form" action="index.html" method="GET">
+                    <fieldset>
+                        <legend>New task</legend>
+                        <span class="form-element">
+                            <label for="task-title">Task title:<abbr title="required">*</abbr></label>
+                            <input type="text" name="task-title" placeholder="Type the task's title" minlength="3" maxlength="100" required autofocus>
+                        </span>
+                        <span class="form-element">
+                            <label for="task-description">Task description:<abbr title="required">*</abbr></label>
+                            <textarea name="task-description" placeholder="Type the task's description" minlength="3" maxlength="500" required></textarea>
+                        </span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Start day</legend>
+                        <span class="form-element">
+                            <label for="day">Select the day:<abbr title="required">*</abbr></label>
+                            <select name="day" required>
+                                <option name="Monday" value="Monday">Monday</option>
+                                <option name="Tuesday" value="Tuesday">Tuesday</option>
+                                <option name="Wednesday" value="Wednesday">Wednesday</option>
+                                <option name="Thursday" value="Thursday">Thursday</option>
+                                <option name="Friday" value="Friday">Friday</option>
+                                <option name="Saturday" value="Saturday">Saturday</option>
+                                <option name="Sunday" value="Sunday">Sunday</option>
+                            </select>
+                        </span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Urgency</legend>
+                        <span class="form-element">
+                            <label for="urgent">(Yes / No):</label>
+                            <input type="checkbox" name="urgent" value="urgent">
+                        </span>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Priority</legend>
+                        <ul>
+                            <li>
+                                <input id="low-priority" type="radio" name="priority" value="low">
+                                <label for="low-priority">Low</label>
+                            </li>
+                            <li>
+                                <input id="normal-priority" type="radio" name="priority" value="normal">
+                                <label for="normal-priority">Normal</label>
+                            </li>
+                            <li>
+                                <input id="high-priority" type="radio" name="priority" value="high">
+                                <label for="high-priority">High</label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Deadline</legend>
+                        <span class="form-element">
+                            <label for="date">Set date:<abbr title="required">*</abbr></label>
+                            <input type="date" name="date" value="2019-01-01" min="2019-01-01" max="2099-12-31" required>
+                        </span>
+                        <span class="form-element">
+                            <label for="time">Set time:<abbr title="required">*</abbr></label>
+                            <input type="time" name="time" value="07:00" min="00:00" max="23:59" required>
+                        </span>
+                    </fieldset>
+                    <input type="submit" value="Add">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
