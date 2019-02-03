@@ -49,7 +49,7 @@ ol {
                     margin: 10px 0 0 0;
                     @include transition(all, 1s, ease-in-out);   
                 }
-                input[type=checkbox] {
+                input[type="checkbox"] {
                     display: none;
                     &:checked ~ p {
                         max-height: 300px;

@@ -159,8 +159,8 @@ ul, ol { list-style: none; }
 .todo-list-item-text { font: 700 14px/20px "Roboto", Arial, Verdana, sans-serif; margin: 0 0 10px 0; text-align: center; }
 .todo-list-item-buttons { display: flex; flex-flow: row wrap; align-items: stretch; justify-content: space-between; }
 .todo-list-item-buttons-details { max-height: 0; overflow: hidden; margin: 10px 0 0 0; transition: all 1s ease-in-out; -o-transition: all 1s ease-in-out; -ms-transition: all 1s ease-in-out; -moz-transition: all 1s ease-in-out; -webkit-transition: all 1s ease-in-out; }
-.todo-list-item-buttons input[type=checkbox] { display: none; }
-.todo-list-item-buttons input[type=checkbox]:checked ~ p { max-height: 300px; }
+.todo-list-item-buttons input[type="checkbox"] { display: none; }
+.todo-list-item-buttons input[type="checkbox"]:checked ~ p { max-height: 300px; }
 .todo-form { display: flex; flex-flow: row wrap; align-items: stretch; justify-content: space-between; }
 .todo-form-block { width: 100%; padding: 10px; font-size: 0; margin: 0 0 15px 0; border-radius: 0.25rem; border: 1px solid #ced4da; }
 .todo-form-block:nth-of-type(1) { padding: 10px 10px 6px; }
