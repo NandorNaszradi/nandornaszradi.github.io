@@ -1,0 +1,23 @@
+/* Fonts */
+$font-family: 'Roboto', Arial, Verdana, sans-serif;
+$font-basic: 12px/20px $font-family;
+$font-bold: 700 14px/20px $font-family;
+$font-heading: 700 20px/24px $font-family;
+$font-placeholder: italic 300 12px/20px $font-family;
+/* Placeholder formatting */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $grey;
+    font: $font-placeholder;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: $grey;
+    font: $font-placeholder;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: $grey;
+    font: $font-placeholder;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: $grey;
+    font: $font-placeholder;
+}

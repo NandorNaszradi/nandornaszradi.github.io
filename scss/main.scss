@@ -1,0 +1,102 @@
+/* CSS Reset & Basic Setup*/
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    color: $black;
+    font: $font-basic;
+    @include box-sizing(border-box);
+}
+.container {
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 900px;
+    &-fluid { padding: 15px; }
+    @include border(1px solid $grey-light, .25rem);
+}
+h1 {
+    margin: 0 0 15px 0;
+    text-align: center;
+    font: $font-heading;
+}
+ul,
+ol {
+    list-style: none;
+}
+.todo {
+    &-list {
+        @include flex-box(flex, row wrap, flex-start, space-between);
+        &-item { 
+            margin: 0 10px 10px 0;
+            @include flex(1, 1, 225px);
+            padding: 10px 10px 3px 10px;
+            @include border(1px solid $grey-light, .25rem);
+            &:nth-of-type(3n) {
+                margin: 0 0 10px 0;                
+            }
+            &-text {
+                font: $font-bold;
+                margin: 0 0 10px 0;
+                text-align: center;
+            }
+            &-buttons {
+                @include flex-box(flex, row wrap, stretch, space-between);
+                &-details {
+                    max-height: 0;
+                    overflow: hidden;
+                    margin: 10px 0 0 0;
+                    @include transition(all, 1s, ease-in-out);   
+                }
+                input[type=checkbox] {
+                    display: none;
+                    &:checked ~ p {
+                        max-height: 300px;
+                    }
+                }
+            }
+        }
+    }
+    &-form {
+        @include flex-box(flex, row wrap, stretch, space-between);
+        &-block {
+            width: 100%;
+            padding: 10px;
+            font-size: 0;
+            margin: 0 0 15px 0;
+            @include border(1px solid $grey-light, .25rem);
+            &:nth-of-type(1) {
+                padding: 10px 10px 6px;
+            } 
+            &:nth-of-type(1),
+            &:nth-of-type(3) {
+                .todo-form-block-element:first-of-type {
+                    margin: 0 0 15px 0;
+                }
+            }
+            &:nth-of-type(2),
+            &:nth-of-type(3),
+            &:nth-of-type(4),
+            &:nth-of-type(5) {
+                width: 49%;
+            }
+            legend {
+                font: $font-bold;
+            }
+            label {
+                width: 105px;
+                min-height: 22px;
+                vertical-align: top;
+                display: inline-block;
+                abbr[title] {
+                    color: $red;
+                    font-weight: 700;
+                    vertical-align: top;
+                    text-decoration: none;
+                    padding: 0px 5px 0px 2px;
+                }
+            }
+        }
+    }    
+}

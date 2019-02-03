@@ -1,0 +1,31 @@
+/* Box - sizing */
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+    -moz-box-sizing: $box-model; // Firefox <= 19
+    -webkit-box-sizing: $box-model; // Safari <= 5
+}
+/* Flex - box*/
+@mixin flex-box($flex, $flow, $align, $justify) {
+    display: $flex;
+    flex-flow: $flow;
+    align-items: $align;
+    justify-content: $justify;
+}
+/* Flex */
+@mixin flex($grow, $shrink, $basis) {
+    flex: $grow $shrink $basis;
+}
+/* Border */
+@mixin border($borderproperties, $radius) {
+    border-radius: $radius;
+    border: $borderproperties;
+}
+
+/* Transition */
+@mixin transition($property, $duration, $function) {
+    transition: $property $duration $function;
+    -o-transition: $property $duration $function;
+    -ms-transition: $property $duration $function;
+    -moz-transition: $property $duration $function;
+    -webkit-transition: $property $duration $function;
+}

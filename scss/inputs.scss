@@ -1,0 +1,71 @@
+
+/* Inputs */
+%submit-button-basic {
+    color: $white;
+    cursor: pointer;
+    font: $font-bold;
+    padding: 2px 5px 0;
+    text-align: center;
+    background-color: $blue;
+    @include border(1px solid $blue, .25rem);
+}
+select,
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+    min-height: 22px;
+    padding: 0 0 0 4px;
+    width: calc(100% - 108px);
+    @include border(1px solid $grey-light, .25rem);
+}
+input[type="submit"],
+.todo-list-item-buttons label {
+    @extend %submit-button-basic;
+    &:hover, &:focus, &:active {
+        border-color: $blue-darkest;
+        background-color: $blue-darker;
+    }
+}
+button {
+    @extend %submit-button-basic;
+    &.delete {
+        border-color: $red;
+        background-color: $red;
+        &:hover, &:focus, &:active {
+            border-color: $red-darkest;
+            background-color: $red-darker;
+        }
+    }
+    &.edit {
+        color: $black;
+        border-color: $yellow;
+        background-color: $yellow;
+        &:hover, &:focus, &:active {
+            border-color: $yellow-darkest;
+            background-color: $yellow-darker;        
+        }
+    }
+    &.finished {
+        margin: 0;
+        border-color: $green;
+        background-color: $green;
+        &:hover, &:focus, &:active {
+            border-color: $green-darkest;
+            background-color: $green-darker;      
+        }
+    }
+}
+input[type="radio"] {
+    top: 2px;
+    position: relative;
+}
+input[type="checkbox"] {
+    top: 3px;
+    position: relative;
+}
+select,
+textarea {
+    padding: 0;
+    max-width: calc(100% - 108px);
+}
