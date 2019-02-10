@@ -6,18 +6,18 @@ $font-heading: 700 20px/24px $font-family;
 $font-placeholder: italic 300 12px/20px $font-family;
 /* Placeholder formatting */
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: $grey;
+    color: color-map('grey', 'base');
     font: $font-placeholder;
 }
 ::-moz-placeholder { /* Firefox 19+ */
-    color: $grey;
+    color: color-map('grey', 'base');
     font: $font-placeholder;
 }
 :-ms-input-placeholder { /* IE 10+ */
-    color: $grey;
+    color: color-map('grey', 'base');
     font: $font-placeholder;
 }
 :-moz-placeholder { /* Firefox 18- */
-    color: $grey;
+    color: color-map('grey', 'base');
     font: $font-placeholder;
 }

@@ -1,23 +1,20 @@
-/* CSS Reset & Basic Setup*/
+/* Custom CSS Reset & Basic Setup*/
 * {
     margin: 0;
     border: 0;
     padding: 0;
     outline: 0;
-    color: $black;
     font: $font-basic;
     @include box-sizing(border-box);
+    color: color-map('black', 'base');
 }
 .container {
-    width: 100%;
-    padding: 15px;
-    margin: 0 auto;
-    max-width: 900px;
-    &-fluid { padding: 15px; }
-    @include border(1px solid $grey-light, .25rem);
+    margin: 10px;
+    padding: 5px;
+    @include border(1px solid color-map('grey', 'light'), .25rem);
 }
 h1 {
-    margin: 0 0 15px 0;
+    margin: 10px 5px;
     text-align: center;
     font: $font-heading;
 }
@@ -29,13 +26,10 @@ ol {
     &-list {
         @include flex-box(flex, row wrap, flex-start, space-between);
         &-item { 
-            margin: 0 10px 10px 0;
-            @include flex(1, 1, 225px);
+            margin: 5px;
+            @include flex(1, 1, 30%);
             padding: 10px 10px 3px 10px;
-            @include border(1px solid $grey-light, .25rem);
-            &:nth-of-type(3n) {
-                margin: 0 0 10px 0;                
-            }
+            @include border(1px solid color-map('grey', 'light'), .25rem);
             &-text {
                 font: $font-bold;
                 margin: 0 0 10px 0;
@@ -61,11 +55,10 @@ ol {
     &-form {
         @include flex-box(flex, row wrap, stretch, space-between);
         &-block {
+            margin: 5px;
             width: 100%;
             padding: 10px;
-            font-size: 0;
-            margin: 0 0 15px 0;
-            @include border(1px solid $grey-light, .25rem);
+            @include border(1px solid color-map('grey', 'light'), .25rem);
             &:nth-of-type(1) {
                 padding: 10px 10px 6px;
             } 
@@ -79,7 +72,7 @@ ol {
             &:nth-of-type(3),
             &:nth-of-type(4),
             &:nth-of-type(5) {
-                width: 49%;
+                width: calc(50% - 10px);
             }
             legend {
                 font: $font-bold;
@@ -90,11 +83,11 @@ ol {
                 vertical-align: top;
                 display: inline-block;
                 abbr[title] {
-                    color: $red;
                     font-weight: 700;
                     vertical-align: top;
                     text-decoration: none;
                     padding: 0px 5px 0px 2px;
+                    color: color-map('red', 'base');
                 }
             }
         }

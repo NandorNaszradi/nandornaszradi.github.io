@@ -1,34 +1,46 @@
 /* Media Queries */
-@media all and (max-width: 787px) {
+@media all and (max-width: 768px) {
     .todo {
         &-list {
             &-item {
-                margin: 5px;
-                @include flex(1, 1, 250px);
-                &:nth-of-type(3n) { margin: 5px; }
+                @include flex(1, 1, 45%);
                 &-buttons {
                     @include flex-box(flex, row wrap, stretch, space-around);
-                    label, button { width: 35%; max-width: 115px; margin: 0 0 5px 0; }
+                    label,
+                    button {
+                        width: 35%;
+                        max-width: 115px;
+                        margin: 0 0 5px 0;
+                    }
                 }
             }
         }
     }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 550px) {
     .todo{
         &-list {
             &-item {
-                margin: 0 0 10px 0;
                 @include flex(1, 1, 100%);
-                &:nth-of-type(3n) { margin: 0 0 10px 0; }
-                &-buttons { label, button { margin: 0; width: 24%; max-width: 100px; }
+                &-buttons {
+                    @include flex-box(flex, row wrap, stretch, space-between);
+                    label,
+                    button {
+                        margin: 0;
+                        width: 24%;
+                        max-width: 100px;
+                    }
                 }
             }
         }
         &-form {
             &-block {
-                label { width: auto; }
-                &:nth-of-type(1) { padding: 10px; }
+                label {
+                    width: auto;
+                }
+                &:nth-of-type(1) {
+                    padding: 10px;
+                }
             }
         }
     }
@@ -36,16 +48,29 @@
     textarea,
     input[type="text"],
     input[type="date"],
-    input[type="time"] { width: 100%; display: block; max-width: 100%; }
-    input[type="checkbox"] { left: 3px; }
+    input[type="time"] {
+        width: 100%;
+        display: block;
+        max-width: 100%;
+    }
+    input[type="checkbox"] {
+        left: 3px;
+    }
 }
 @media all and (max-width: 380px) {
     .todo {
         &-list {
             &-item {
                 &-buttons {
-                    label { width: 100px; }
-                    button { width: 100%; margin: 0 0 10px 0 }
+                    label,
+                    button {
+                        width: 60%;
+                        max-width: 60%;
+                        min-width: 100px;
+                    }
+                    button {
+                        margin: 0 0 10px 0
+                    }
                     @include flex-box(flex, column wrap, center, space-between);
                 }
             }
@@ -55,7 +80,9 @@
                 &:nth-of-type(2),
                 &:nth-of-type(3),
                 &:nth-of-type(4),
-                &:nth-of-type(5) { width: 100%; }
+                &:nth-of-type(5) {
+                    width: 100%;
+                }
             }
         }
     }
