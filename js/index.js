@@ -1,6 +1,7 @@
 "use strict"
 
 var list = (condition) => {
+    let elements = [];
     todoList.forEach((listItem, index) => {
         let timeAndTitle,
             hours = listItem.dateTime.getHours(),
@@ -21,10 +22,17 @@ var list = (condition) => {
             console.log((index + 1) + '. Low priority task: ' + JSON.stringify(timeAndTitle));
         } else if (condition === 'urgent' && listItem.urgent === true) {
             console.log((index + 1) + '. Urgency task: ' + JSON.stringify(timeAndTitle));
+        } else if (condition === 'time') {
+            elements.push(JSON.stringify(timeAndTitle));
+        } else if (condition === 'abc') {
+            elements.push(listItem.title);
         }
     });
+    if (condition === 'abc') {
+        console.log('ABC sort: \n' + elements.sort().toString().split(',').join('\n'));
+    } else if (condition === 'time') {
+        console.log('Time sort: \n' + elements.sort().toString().split(',').join('\n'));
+    } else if (condition === 'everything') {
+        console.log('Every object: \n' + JSON.stringify(todoList).split(',').join('\n'));
+    }
 };
-
-document.addEventListener('DOMContentLoaded', event => {
-    //list();
-});
