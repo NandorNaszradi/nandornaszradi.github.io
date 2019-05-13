@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
         <title>TODO Application</title>
     </head>
     <body>
@@ -57,8 +58,8 @@
                 <fieldset class="todo-form-block">
                     <legend>Urgency</legend>
                     <div class="todo-form-block-element">
-                        <label for="urgent">(Yes / No):</label>
                         <input type="checkbox" id="urgent" name="urgent" value="urgent">
+                        <label for="urgent" class="toggle">(Yes / No):<span class="fas fa-check"></span></label>
                     </div>
                 </fieldset>
                 <fieldset class="todo-form-block">
@@ -78,7 +79,7 @@
                         </li>
                     </ul>
                 </fieldset>
-                <input type="submit" value="Add" id="add-new-item">
+                <input type="submit" value="Add +" id="add-new-item">
             </form>
         </div>
         <script type="text/javascript" src="js/jquery.min.js"></script>

@@ -10,7 +10,8 @@ $color-map: (
     ),
     'grey': (
         'base': #3a3a3a,
-        'light': #ced4da
+        'light': #ced4da,
+        'dark': #666666
     ),
     'red': (
         'base': #dc3545,
@@ -32,6 +33,10 @@ $color-map: (
         'base': #007bff,
         'dark': #005cbf,
         'darker': #0062cc
+    ),
+    'urgent': (
+        'base': #f5c6cb,
+        'dark': #ed969e
     )
 );
 

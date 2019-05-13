@@ -37,6 +37,15 @@ ol {
             }
             &-buttons {
                 @include flex-box(flex, row wrap, stretch, space-between);
+                .fas {
+                    margin: 0 0 0 5px;
+                    position: relative;
+                    color: color-map('white', 'base');
+                }
+                .fa-edit {
+                    top: -1px;
+                    font-size: 12px;
+                }
                 &-details {
                     max-height: 0;
                     overflow: hidden;
@@ -50,6 +59,10 @@ ol {
                     }
                 }
             }
+        }
+        .urgent {
+            background: color-map('urgent', 'base');
+            @include border(1px solid color-map('urgent', 'dark'), .25rem);
         }
     }
     &-form {

@@ -1,5 +1,5 @@
 /* Media Queries */
-@media all and (max-width: 768px) {
+@media all and (max-width: 1000px) {
     .todo {
         &-list {
             &-item {
@@ -8,8 +8,8 @@
                     @include flex-box(flex, row wrap, stretch, space-around);
                     label,
                     button {
-                        width: 35%;
-                        max-width: 115px;
+                        width: 40%;
+                        max-width: 152px;
                         margin: 0 0 5px 0;
                     }
                 }
@@ -57,7 +57,7 @@
         left: 3px;
     }
 }
-@media all and (max-width: 380px) {
+@media all and (max-width: 410px) {
     .todo {
         &-list {
             &-item {

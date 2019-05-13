@@ -2,16 +2,16 @@
 
 $(function(){
     //Function for inserting the TODO list elements into the DOM
-    var todoListCreator = function (time, title, description, itemIndex) {
+    var todoListItemAppender = function (time, title, description, itemIndex) {
         $('.todo-list').append(
             '<li class="todo-list-item">' +
                 '<p class="todo-list-item-text">' + time + ' - ' + title + '</p>' +
                 '<div class="todo-list-item-buttons">' +
-                    '<button type="button" class="delete">Delete</button>' +
-                    '<button type="button" class="edit">Edit</button>' +
-                    '<button type="button" class="finished">Finished</button>' +
+                    '<button type="button" class="delete">Delete<i class="fas fa-trash-alt"></i></button>' +
+                    '<button type="button" class="edit">Edit<i class="fas fa-edit"></i></button>' +
+                    '<button type="button" class="finished">Finished<i class="fas fa-check"></i></button>' +
                     '<input type="checkbox" name="checkbox-toggle-'+ (itemIndex + 1) +'"id="checkbox-toggle-'+ (itemIndex + 1) +'">' +
-                    '<label for="checkbox-toggle-'+ (itemIndex + 1) +'">Details</label>' +
+                    '<label for="checkbox-toggle-'+ (itemIndex + 1) +'">Details<i class="fas fa-info-circle"></i></label>' +
                     '<p class="todo-list-item-buttons-details">'+ description +'</p>' +
                 '</div>' +    
             '</li>'
@@ -33,7 +33,7 @@ $(function(){
         },
             listItemNumber = $('.todo-list-item').length + 1;  
 
-        todoListCreator(lisItemData.time, lisItemData.title, lisItemData.description, listItemNumber);
+        todoListItemAppender(lisItemData.time, lisItemData.title, lisItemData.description, listItemNumber);
         event.preventDefault();
 
     });
@@ -49,8 +49,15 @@ $(function(){
         hours = hours < 10 ? '0' + hours : hours;
         minutes = minutes < 10 ? '0' + minutes : minutes;
 
-        todoListCreator(hours + ':' + minutes, listItem.title, listItem.description, index);
+        todoListItemAppender(hours + ':' + minutes, listItem.title, listItem.description, index);
 
+        if (listItem.urgent === true) $('.todo-list-item:nth-of-type(' + (index + 1) + ')').addClass('urgent');
+
+    });
+
+    //Remove task from the list
+    $('.todo-list').on('click', '.delete', function(){
+        $(this).parents('.todo-list-item').remove();
     });
 
     var list = function (sortingOption) {
