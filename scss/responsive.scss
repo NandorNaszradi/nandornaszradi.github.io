@@ -56,6 +56,18 @@
     input[type="checkbox"] {
         left: 3px;
     }
+    .modal-overlay .modal .edit-form-block {
+        label,
+        select,
+        textarea,
+        input[type="text"],
+        input[type="date"],
+        input[type="time"] {
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
 }
 @media all and (max-width: 410px) {
     .todo {

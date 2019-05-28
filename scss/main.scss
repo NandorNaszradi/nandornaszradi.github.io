@@ -64,6 +64,10 @@ ol {
             background: color-map('urgent', 'base');
             @include border(1px solid color-map('urgent', 'dark'), .25rem);
         }
+        .finished-item {
+            background: color-map('grey', 'light');
+            @include border(1px solid color-map('grey', 'dark'), .25rem);
+        }
     }
     &-form {
         @include flex-box(flex, row wrap, stretch, space-between);
@@ -95,13 +99,6 @@ ol {
                 min-height: 22px;
                 vertical-align: top;
                 display: inline-block;
-                abbr[title] {
-                    font-weight: 700;
-                    vertical-align: top;
-                    text-decoration: none;
-                    padding: 0px 5px 0px 2px;
-                    color: color-map('red', 'base');
-                }
             }
         }
     }    

@@ -9,6 +9,13 @@
     background-color: color-map('blue', 'base');
     @include border(1px solid color-map('blue', 'base'), .25rem);
 }
+abbr[title] {
+    font-weight: 700;
+    vertical-align: top;
+    text-decoration: none;
+    padding: 0px 5px 0px 2px;
+    color: color-map('red', 'base');
+}
 select,
 textarea,
 input[type="text"],
@@ -56,10 +63,7 @@ button {
         }
     }
 }
-input[type="radio"] {
-    top: 2px;
-    position: relative;
-}
+input[type="radio"],
 input[type="checkbox"] {
     display: none;
 }
@@ -71,7 +75,7 @@ textarea {
     padding: 0;
     max-width: calc(100% - 108px);
 }
-//Custom Checkbox
+//Custom Checkbox & Radio Buttons
 .toggle {
     width: 40px;
     height: 20px;
@@ -80,7 +84,8 @@ textarea {
     position: relative;
     transform: translate3d(0, 0, 0);
     -webkit-tap-highlight-color: transparent;
-    .fa-check:before {
+    .fa-check:before,
+    .fa-circle:before {
         top: 5px;
         left: 4px;
         position: relative;
@@ -125,7 +130,8 @@ textarea {
         } 
     }     
 }
-#urgent:checked + .toggle {
+#urgent:checked + .toggle,
+input[id*="-priority"]:checked + .toggle {
     &:after {
         background: color-map('green', 'base');
     }   
@@ -140,4 +146,19 @@ textarea {
             transition: all 0.4s ease;
         }
     } 
+}
+//Radio Button Specific Modifications
+.todo-form-block {
+    label[for*="-priority"] {
+        width: 50px;
+        .fa-circle:before {
+            top: 3px;
+            left: 7px;
+            font-size: 8px;  
+        }
+        &:after {
+            top: -17px;
+            left: 108px;
+        }
+    }
 }
